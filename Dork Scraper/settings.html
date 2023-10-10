@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Settings</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 8%;
+      height: 100%;
+      background-color: #f1f1f1;
+      padding: 10px;
+    }
+
+    .navbar button {
+      display: block;
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    .navbar button:hover {
+      background-color: #45a049;
+    }
+
+    .content {
+      margin-left: 10%;
+    }
+
+    fieldset {
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-bottom: 20px;
+    }
+
+    legend {
+      font-weight: bold;
+    }
+    
+    .results {
+      display: flex;
+    }
+    
+    .container {
+      display: flex;
+    }
+
+    .container fieldset {
+      margin-right: 10px;
+    }
+
+    .container fieldset:last-child {
+      margin-right: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    input[type="text"] {
+      width: 86%;
+      padding: 8px;
+      margin-bottom: 8px;
+    }
+
+    button {
+      padding: 8px 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+    
+    .actions {
+      display: flex;
+      justify-content: space-around;
+    }
+    
+    #dorkSettingsFieldset{
+      display:none;
+    }
+    #searchEngine {
+      width: 14%;
+      height: 35px;
+    }
+
+    #dorkInput {
+      width: 73%;
+    }
+    
+    #addDorkButton {
+      width: 10%;
+    }
+
+    #domainInput {
+      width: 85%;
+    }
+    
+    #addDomainButton {
+      width: 11%;
+    }
+  
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <button id="resultsButton">Results</button>
+    <button id="dorkSettingsButton">Dork settings</button>
+  </div>
+  <div class="content">
+  
+    <fieldset id="resultsFieldset" style="height:90vh">
+      <legend>Results</legend>
+      <div class="results">
+          <fieldset style="width:85%;">
+            <input type="text" id="domainInput" placeholder="Enter a domain">
+            <button id="addDomainButton">Add Domain</button>
+            <div class="actions">
+              <button id="downloadSubdomainsButton">download Subdomains</button>
+              <button id="downloadEndpointsButton">download Endpoints</button>
+            </div>
+          </fieldset>
+          <fieldset style="width:15%">
+            <p>Endpoints &nbsp;&nbsp;&nbsp;&nbsp;: <span id="endpointsCount">0</span></p>
+            <p>Subdomains : <span id="subdomainsCount">0</span></p>
+          </fieldset>
+      </div>
+      <div class="container">
+        <fieldset style="height:60vh;width:20%; overflow: auto;">
+          <legend>Domains</legend>
+          <table id="domainsTable">
+            <thead>
+              <tr>
+                <th>Domain</th>
+                <th style="width:15%">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </fieldset>
+       <fieldset style="height:60vh;width:25%; overflow: auto;">
+          <legend>Subdomains</legend>
+          <table id="subdomainTable">
+            <thead>
+              <tr>
+                <th>Subdomain</th>
+                <th style="width:15%">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </fieldset>
+        <fieldset style="height:60vh;width:55; overflow: auto;%">
+          <legend>Endpoints</legend>
+          <table id="endpointsTable">
+            <thead>
+              <tr>
+                <th>Endpoint</th>
+                <th style="width:15%">Action</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </fieldset>
+      </div>
+    </fieldset>
+    
+    
+    <fieldset id="dorkSettingsFieldset" style="height:90vh"> 
+      <legend>Dork Settings</legend>
+      <fieldset>
+        <select id="searchEngine">
+            <option value="google">Google</option>
+            <option value="bing">Bing</option>
+            <option value="duckduckgo">DuckDuckGo</option>
+            <option value="yandex">Yandex</option>
+            <option value="yahoo">Yahoo</option>
+        </select>
+        <input type="text" id="dorkInput" placeholder="Enter a dork">
+        <button id="addDorkButton">Add Dork</button>
+      </fieldset>
+      <fieldset style="height:78%;width:98%; overflow: auto;">
+        <legend>Dorks</legend>
+        <table id="dorksTable">
+          <thead>
+            <tr>
+              <th style="width:15%">Search Engine</th>
+              <th>Dorks</th>
+              <th style="width:15%">Action</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </fieldset>
+    </fieldset>
+  </div>
+
+  <script src="settings.js"></script>
+</body>
+</html>
+

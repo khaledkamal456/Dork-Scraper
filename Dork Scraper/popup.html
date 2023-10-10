@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Dork Scraper</title>
+    <script src="popup.js"></script>
+    <style>
+    body{
+        color:#4CAF50;
+        width:280px;
+    }
+    button {
+      padding-bottom: 5px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    fieldset{
+        color:gray;
+    }
+    legend{
+        color:black;
+    }
+    </style>
+    </head>
+    <body>
+        <h1 style="text-align: center">Dork Scraper</h1>
+        <table style="width:100%">
+            <tr>
+                <td style="width:60%">
+                    <select id="targetDomain" style="width:100%">
+                        <option>Target domain</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="searchEngine" style="width:100%">
+                        <option>Search engine</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <select id="startDork" style="width:100%">
+                        <option>Start from this dork</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <fieldset>
+            <legend>new results</legend>
+            <table style="width:100%">
+                <tr style="width:60%">
+                    <td>
+                        <p>page number : <span id="pageNumber"></span></p>
+                    </td>
+                    <td>
+                        <p>page status : <span id="pageStatus"></span></p>
+                    </td>
+                </tr>
+                <tr style="width:40%">
+                    <td>
+                        <p>endpoints &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span id="endpointsCounter">0</span></p>
+                    </td>
+                    <td>
+                        <p>subdomains : <span id="subdomainsCounter">0</span></p>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <fieldset>
+            <legend>total results</legend>
+            <table style="width:100%">
+                <tr>
+                    <td style="width:53%">
+                        <p>endpoints &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: <span id="totalEndpointsCounter">0</span></p>
+                    </td>
+                    <td style="width:47%">
+                        <p>subdomains : <span id="totalSubdomainsCounter">0</span></p>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+        <table style="width:100%">
+            <tr>
+                <td>
+                    <button id="prevPage" style="width:100%">prev page</button>
+                </td>
+                <td>
+                    <button id="scraper" style="width:100%">page scraping</button>
+                </td>
+                <td>
+                    <button id="nextPage" style="width:100%">next page</button>
+                </td>
+            </tr>
+            <!--<tr>
+                <td colspan="3">
+                    <button id="nextDork" style="width:100%">next Dork</button>
+                </td>
+            </tr>-->
+        </table>
+    </body>
+</html>

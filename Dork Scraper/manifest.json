@@ -1,0 +1,23 @@
+{
+  "manifest_version": 3,
+  "name": "Google Dorking",
+  "version": "1.0",
+  "permissions": ["tabs","activeTab","scripting"],
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "options_page": "settings.html",
+  "host_permissions": [
+    "https://www.google.com/*",
+    "https://www.bing.com/*",
+    "https://duckduckgo.com/*",
+    "https://yandex.com/*",
+    "https://search.yahoo.com/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["content.js"],
+      "matches": ["https://www.google.com/*"]
+    }
+  ]
+}
