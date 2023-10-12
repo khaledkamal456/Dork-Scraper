@@ -287,9 +287,43 @@ function displayTotalresults(){
 }
 
 // Open IndexedDB database
-const request = indexedDB.open('DorkScraperDB', 2);
+const request = indexedDB.open('DorkScraperDB', 1);
 let db;
+request.onupgradeneeded = function(event) {
+  db = event.target.result;
 
+  // Create object store for domains
+  if (!db.objectStoreNames.contains('domains')) {
+    const domainsStore = db.createObjectStore('domains', { keyPath: 'id', autoIncrement: true });
+    domainsStore.createIndex('domainIndex', 'domain', { unique: true });
+  }
+  
+  // Create object store for subdomains
+  if (!db.objectStoreNames.contains('subdomains')) {
+    const subdomainsStore = db.createObjectStore('subdomains', { keyPath: 'id', autoIncrement: true });
+    subdomainsStore.createIndex('domainId', 'domainId', { unique: false });
+    subdomainsStore.createIndex('subdomainIndex', 'subdomain', { unique: true });
+  }
+
+  // Create object store for endpoints
+  if (!db.objectStoreNames.contains('endpoints')) {
+    const endpointsStore = db.createObjectStore('endpoints', { keyPath: 'id', autoIncrement: true });
+    endpointsStore.createIndex('domainId', 'domainId', { unique: false });
+    endpointsStore.createIndex('endpointIndex', 'endpoint', { unique: true });
+  }
+  
+  // Create object store for endpoints
+  if (!db.objectStoreNames.contains('dorks')) {
+    const dorksStore = db.createObjectStore('dorks', { keyPath: 'id', autoIncrement: true });
+    dorksStore.createIndex('searchEngine', 'searchEngine', { unique: false });
+    dorksStore.createIndex('dorkIndex', 'dork', { unique: false });
+  }
+  
+  // Create object store for settings
+  if (!db.objectStoreNames.contains('settings')) {
+    const settingsStore = db.createObjectStore('settings', { keyPath: 'id' });
+  }
+};
 request.onsuccess = function(event) {
   db = event.target.result;
   displayDomains(); // Call the function after the database is opened successfully
@@ -469,4 +503,3 @@ function getTotalSubdomains(domain) {
     };
   });
 }
-
