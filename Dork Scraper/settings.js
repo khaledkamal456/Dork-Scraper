@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // Open IndexedDB database
-const request = indexedDB.open('DorkScraperDB', 2);
+const request = indexedDB.open('DorkScraperDB', 1);
 let db;
 
 request.onupgradeneeded = function(event) {
