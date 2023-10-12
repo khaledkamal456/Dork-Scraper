@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Google Dorking",
+  "name": "Dork Scraper",
   "version": "1.0",
   "permissions": ["tabs","activeTab","scripting"],
   "action": {
