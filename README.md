@@ -1,20 +1,48 @@
 # Dork-Scraper
-اضافة تساعدك تجمع نتائج البحث بال dorks 
-# طريقة التسطيب
-1 - حمل ملفات الاضافة <br>
-2 - خش على chrome://extensions/ من جوجل كروم <br>
-3 - فعل ال developer mod ودوس على زرار load unpacked واختار الملف بتاع الاضافة <br>
-# اضافة domains و dorks للاضافة
-1 - دوس كلك يمين على الاضافة واختار options <br>
-2 - هتكتب ال domain بتاعك فوق وتدوس Add Domain <br>
-3 - هتدوس على زرار Dork settings من الشمال وهتكتب ال dork اللي عايز تضيفه وهتغير المكان اللي هيكون فيه ال domain ب $target$ مثلا بدل site:example.com هيبقا  <br>
- site:$target$  <br>
-4 - هتحدد هو بتاع انهي محرك بحث وتدوس Add Dork <br>
-# طريقة الاستخدام
-1 - هتدوس على الايقونه بتاعت الاضافة كلك شمال عادي هيفتحلك الاضافة هتحدد ال domain و محرك البحث وال dork اللي هتبحث بيه <br>
-2 - هتدوس next page هيفتحلك اول صفحة بحث هتدوس page scraping عشان يجمع النتائج وبعدها next page عشان ينقلك للصفحة اللي بعدها وتدوس page scraping عشان يجمع النتائج .... <br>
-# تحميل النتائج
-1 - بعد ما تخلص وتحب تحمل النتائج هتخش على الصفحة بتاعت ال options اللي ضيفنت منها ال domains و dorks وبعدها هتدوس على ال domain اللي انت شغال عليه عشان يظهرلك النتائج بتاعته <br>
-2 - هتدوس بعدها على download subdomains او download endpoints اللي فوق عشان يحملك ملف text فيه النتائج بتاع ال domain اللي دوست عليه <br>
 
-## ملاحظة مهمة : موقع DuckDuckGo مفهوش صفح نتائج بحث هي عبارة عن صفحة واحده وبتنزل لتحت لحد ما النتائج تخلص عشان كدا ملهاش لزمة تعمل next page بس انت انزل لحد الاخر بالموس منغير ما تخرج برا الاضافة ولما توصل لتحت خالص دوس page scraping عشان يجمع النتائج
+Dork-Scraper is a Google Chrome extension designed to help you gather endpoints from search engines as a penetration testing tool. This extension allows you to add custom domains and Dorks, making the search and results collection process easier.
+
+## System Requirements
+
+- Google Chrome browser
+- Internet connection
+
+## Installation
+
+1. Download the extension files.
+2. Open Chrome and navigate to `chrome://extensions/`.
+3. Enable Developer Mode in the top right corner.
+4. Click on "Load unpacked" and select the folder containing the extension.
+
+## Adding Domains and Dorks
+
+1. Right-click on the extension and select "Options."
+2. Enter your domain in the top field and click "Add Domain."
+3. Click on the "Dork settings" button on the left, enter the Dork you want to add, and replace the domain placeholder with `$target$`. For example, instead of `site:example.com`, use `site:$target$`.
+4. Specify the appropriate search engine and click "Add Dork."
+
+## Usage
+
+1. Click on the extension icon to open it.
+2. Select the domain, search engine, and Dork you wish to search with.
+3. Click "Next Page" to open the first search results page, then click "Page Scraping" to gather results.
+4. After collecting results, click "Next Page" to move to the next page and repeat the "Page Scraping" process.
+
+## Downloading Results
+
+1. After finishing, go to the "Options" page where you added the domains and Dorks.
+2. Click on the domain you were working with to view its results.
+3. Click on "Download Subdomains" or "Download Endpoints" to download a text file containing the results for the selected domain.
+
+## Important Note
+
+DuckDuckGo has only one search results page, where you can scroll down until all results are displayed. Therefore, there is no need to use "Next Page." Just continue scrolling down until you reach the end, then click "Page Scraping" to collect the results.
+
+## Contributing
+
+If you'd like to contribute to the development of Dork-Scraper, feel free to open issues or submit pull requests to improve the extension.
+
+
+---
+
+If you have any questions, you can reach out through the GitHub page for the extension. Happy searching!
